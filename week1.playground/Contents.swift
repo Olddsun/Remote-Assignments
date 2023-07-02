@@ -66,7 +66,13 @@ Part1: Git & GitHub
   (7) 點擊畫面右下角 Create Repository
 
   upload the local projects to GitHub
-
+  (1) 複製剛剛創立的repo的連結
+  (2) 在終端機，切換到要push的檔案所屬的資料夾
+  (3) 在終端機，輸入指令 git clone (步驟(1)repo的連結)，以上即表示已經把GitHub上Repo的檔案下載到local
+  (4) 做完local的 project之後，存檔在剛剛git clone的那個資料夾
+  (5) 在終端機，輸入指令git status，檢查是否有新存進來的狀態
+  (6) 在終端機，輸入git add、git commit -m (commit message)
+  (7) 在終端機，輸入指令git push . ，表示把剛剛所有的存檔都push上GitHub
  
 
 
@@ -298,7 +304,7 @@ if isRaining {
 }
 
 //7
-let jobLevel = 1
+let jobLevel = 4
 
 switch jobLevel {
 case 1:
