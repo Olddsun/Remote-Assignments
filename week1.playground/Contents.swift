@@ -2,7 +2,7 @@ import UIKit
 
 var greeting = "Hello, playground"
 
-Week 1 assignment
+//Week 1 assignment
 
 /*
 Part1: Git & GitHub
@@ -90,9 +90,249 @@ let y : Int = 2
 var average : Int = x + y / 2
 
 //4.
+//4-1
 let a : Double = 1
 let b : Double = 2
 
 var average2 : Double = a + b / 2
  
-// ( 10 / 3 ) and ( 10.0 / 3.0 ) 的差別在於一開始給
+//4-2
+/*
+ ( 10 / 3 ) and ( 10.0 / 3.0 ) 的差別在於運算後得出的值，先以(10/3)來說，因為3跟10都是Int，
+ 因此(3/10)計算得出的值也只會給到整數部分，亦即3
+ 另一方面，以(10.0/3.0)來說，因為兩者都是Double，所以計算得出的值會是3.333...
+以下以實例操作說明
+ */
+
+let number1 = ( 10 / 3 )
+let number2 = ( 10.0 / 3.0)
+print(number1, number2)
+
+
+
+//5
+
+var number3 = 10
+var number4 = 3
+var remainder = number3 / number4
+
+
+//6
+var flag : Bool = true
+var inputString : String = "Hello world."
+let bitsInBite : Int = 8
+let averageScore : Double = 86.8
+
+//7
+//type inference 是一種Swift的功能，在寫程式宣告變數時，系統會根據你賦予變數的第一個值來判斷該變數的類型(type)
+//例如
+let myName = "Scott"
+//我不需要在myName後面加上 : String， 系統會根據我賦予他的值("Scott") 來判斷myName「應該」是String
+
+//8
+//一開始phoneNumber的值是0987654321，系統會判斷他的類型為Int，所以第二行不能夠給他String值
+
+
+//9
+var salary = 22000
+salary += 28000
+print(salary)
+
+//10
+// ==
+// 主要是用來判斷布林值使用，可以用在條件的語法中
+
+
+
+
+
+//Part 3: Cllection
+
+//1
+var myFriends : [String] = []
+
+//2
+myFriends.append("Ian")
+myFriends.append("Bomi")
+myFriends.append("Kevin")
+
+print(myFriends)
+
+//3
+myFriends.append("Micheal")
+
+print(myFriends)
+
+
+//4
+myFriends.remove(at : 2 )
+myFriends.insert("Kevin", at: 0)
+
+print(myFriends)
+
+//5
+for i in myFriends{
+    print(i)
+}
+
+//6
+//print(myFriends[5])
+//無法找出index 5是什麼，因為myFriends陣列不足六個item，因此index 5也沒item
+
+//7
+//可以尋找index 0 來得到數值，以下舉例
+print ( myFriends[0] )
+//或是使用函式 first
+
+//8
+//使用函式last
+var lastItem = myFriends.last
+print (lastItem as Any)
+
+//9
+var myCountryNumber : [String : Int] = [:]
+
+//10
+
+myCountryNumber["US"] = 1
+myCountryNumber["GB"] = 44
+myCountryNumber["JP"] = 81
+
+//11
+myCountryNumber["GB"] = 0
+
+//12
+//var dictionary: [ KeyType : ValueType ] = [:]
+//在程式碼最後[:]表示這是一個empty Dictionary
+
+//13
+//可以直接把要刪除的key-value pair改成nil
+//假設我要刪除["US"]
+myCountryNumber["US"] = nil
+
+
+//Part 4: Control Flow
+
+//1
+let lottoNumbers = [10, 9, 8, 7, 6, 5]
+
+for numbers in lottoNumbers.suffix(3) {
+    print ( numbers )
+}
+
+//2
+//2-1
+for numbers in lottoNumbers.reversed() {
+    print (numbers )
+}
+
+//2-2
+for i in stride(from: 0, to: 5, by: 2) {
+    let number = lottoNumbers[i]
+    print(number)
+}
+    
+//3
+//3-1
+var i = 5
+    
+while i >= 0 {
+    let number = lottoNumbers[i]
+    print(number)
+    i -= 1
+}
+
+//3-2
+    
+var i2 = 0
+    
+while i2 < lottoNumbers.count {
+    let number = lottoNumbers[i2]
+        
+    if number % 2 == 0 {
+        print(number)
+    }
+        
+    i2 += 1
+}
+    
+    
+    
+//4
+//4-1
+
+var i3 = lottoNumbers.count - 1
+
+repeat {
+    var number = lottoNumbers[i3]
+    print(number)
+    
+    i3 -= 1
+} while i3 <= 0
+
+//4-2
+
+var i4 = 0
+
+repeat {
+    var number = lottoNumbers[i4]
+    print(number)
+    
+    i4 += 2
+} while i4 > lottoNumbers.count - 1
+
+//5
+//while迴圈：在迴圈開始之前進行條件判斷，如果條件true，才會進入迴圈執行迴圈內容。如果條件false，那迴圈就不會執行。
+//repeat-while迴圈：先執行迴圈內容，然後進行條件判斷。如果條件為真，則繼續執行迴圈內容，並重複執行直到條件為假。如果條件為假，則迴圈停止執行。
+
+//整體而言，while 迴圈先進行條件判斷，如果條件true才開始執行迴圈內容，而 repeat-while會先執行迴圈內容，然後再進行條件判斷。
+
+//6
+
+var isRaining : Bool = true
+
+if isRaining {
+    print("It’s raining, I don’t want to work today.")
+} else {
+    print("Although it’s sunny, I still don’t want to work today.")
+}
+
+//7
+let jobLevel = 1
+
+switch jobLevel {
+case 1:
+    print("Member")
+case 2:
+    print("Team Leader")
+case 3:
+    print("Manager")
+case 4:
+    print("Director")
+default:
+    print("We don't have this job")
+}
+
+
+
+//Part 5: Function
+
+//1
+//第一個式子是String
+//第二個式子是Double
+    
+//2
+func mutiply( a: Int , b : Int = 10 ) -> Int {
+    var answer = a * b
+    return answer
+}
+
+//3
+//每一個function都要有parameter，亦即參數，有參數給進去才能夠讓函式運作，而argument label則是用來增加函式的易讀性，可以加在parameter前面，讓其他人更能夠了解這個parameter的意義
+
+
+//4
+func greet (person name : String) {
+    print ("Hello, \(name)")
+}
+greet( person : "Luke" )
