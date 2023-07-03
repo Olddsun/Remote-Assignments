@@ -120,7 +120,7 @@ print(number1, number2)
 
 let number3 = 10
 let number4 = 3
-let remainder = number3 / number4
+let remainder = number3 % number4
 print(remainder)
 
 
