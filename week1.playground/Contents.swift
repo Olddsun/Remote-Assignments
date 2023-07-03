@@ -118,9 +118,10 @@ print(number1, number2)
 
 //5
 
-var number3 = 10
-var number4 = 3
-var remainder = number3 / number4
+let number3 = 10
+let number4 = 3
+let remainder = number3 / number4
+print(remainder)
 
 
 //6
