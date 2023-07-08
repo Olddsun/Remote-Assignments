@@ -266,31 +266,36 @@ if let pet = ownPet2.pet {
 // Part3
 
 
-struct Person: PoliceMan {
-    static func arrestCriminals() -> Void{
-    }
-    
+struct Person {
     var name: String
-    var toolMan: ToolMan
 
-}
-
-struct Engineer: ToolMan{
-    static func fixComputer() -> Void {
-    }
 }
 
 protocol PoliceMan {
-    static func arrestCriminals() -> Void
+    func arrestCriminals()
+}
+
+extension Person: PoliceMan {
+    func arrestCriminals(){
+    }
 }
 
 protocol ToolMan {
-    static func fixComputer() -> Void
+    func fixComputer()
 }
 
+extension Person: ToolMan {
+    func fixComputer() {
 
+    }
+}
 
-//*****let steven = Person(name: "Steven", toolMan: ToolMan)
+struct Engineer: ToolMan{
+    func fixComputer() -> Void {
+    }
+}
+
+var steven = Person(name: "Steven" )
 
 
 
