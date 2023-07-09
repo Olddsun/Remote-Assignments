@@ -16,45 +16,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgF-Fw-ejF">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7c-87-lvh">
-                                        <rect key="frame" x="40.000000000000007" y="100" width="97.666666666666686" height="19.333333333333329"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-0n-0Gg">
-                                        <rect key="frame" x="40" y="219.33333333333334" width="169" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzq-zK-ncM">
-                                        <rect key="frame" x="40" y="682" width="314" height="35"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Show Another Fun Fact"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Zzq-zK-ncM" secondAttribute="trailing" constant="40" id="3ZE-UD-Lzw"/>
-                                    <constraint firstAttribute="bottom" secondItem="Zzq-zK-ncM" secondAttribute="bottom" constant="50" id="BFb-7E-CnS"/>
-                                    <constraint firstItem="j7c-87-lvh" firstAttribute="top" secondItem="kgF-Fw-ejF" secondAttribute="top" constant="100" id="I7O-9C-xI2"/>
-                                    <constraint firstItem="dmE-0n-0Gg" firstAttribute="leading" secondItem="kgF-Fw-ejF" secondAttribute="leading" constant="40" id="OB4-Kq-l6u"/>
-                                    <constraint firstItem="dmE-0n-0Gg" firstAttribute="top" secondItem="j7c-87-lvh" secondAttribute="bottom" constant="100" id="Tbt-1n-NKf"/>
-                                    <constraint firstAttribute="trailing" secondItem="dmE-0n-0Gg" secondAttribute="trailing" constant="40" id="b2L-Ia-AvS"/>
-                                    <constraint firstItem="j7c-87-lvh" firstAttribute="leading" secondItem="kgF-Fw-ejF" secondAttribute="leading" constant="40" id="kFL-tZ-BYE"/>
-                                    <constraint firstItem="Zzq-zK-ncM" firstAttribute="leading" secondItem="kgF-Fw-ejF" secondAttribute="leading" constant="40" id="xih-mr-blg"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K4-10-8AO">
+                                <rect key="frame" x="40" y="159" width="106" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Did you know?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwQ-Df-RQf">
+                                <rect key="frame" x="40" y="734.66666666666663" width="313" height="33.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show Another Fun Facts">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="gray" title="Show Another Fun Facts">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapButon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0s5-s1-gvC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNj-kc-1fK">
+                                <rect key="frame" x="40" y="246" width="313" height="267"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gxv-lq-ptM">
+                                <rect key="frame" x="141" y="326" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="TNj-kc-1fK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="0DJ-jW-osp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZwQ-Df-RQf" secondAttribute="bottom" constant="50" id="6vm-Fp-ohj"/>
+                            <constraint firstItem="TNj-kc-1fK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="92s-Jy-o76"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TNj-kc-1fK" secondAttribute="trailing" constant="40" id="Bb9-B0-6iO"/>
+                            <constraint firstItem="7K4-10-8AO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Dgf-Yl-k2n"/>
+                            <constraint firstItem="7K4-10-8AO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gg2-2Y-brR"/>
+                            <constraint firstItem="ZwQ-Df-RQf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="jLp-va-q0p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZwQ-Df-RQf" secondAttribute="trailing" constant="40" id="jtL-Ao-rBd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="TNj-kc-1fK" id="m03-lx-akS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,11 +73,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
