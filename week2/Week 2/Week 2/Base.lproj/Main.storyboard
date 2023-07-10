@@ -39,28 +39,27 @@
                                     <action selector="tapButon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0s5-s1-gvC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNj-kc-1fK">
-                                <rect key="frame" x="40" y="246" width="313" height="267"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNj-kc-1fK">
+                                <rect key="frame" x="40" y="246" width="313" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QIV-oP-nMo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gxv-lq-ptM">
-                                <rect key="frame" x="141" y="326" width="110" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="TNj-kc-1fK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="0DJ-jW-osp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZwQ-Df-RQf" secondAttribute="bottom" constant="50" id="6vm-Fp-ohj"/>
-                            <constraint firstItem="TNj-kc-1fK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="92s-Jy-o76"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TNj-kc-1fK" secondAttribute="trailing" constant="40" id="Bb9-B0-6iO"/>
                             <constraint firstItem="7K4-10-8AO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Dgf-Yl-k2n"/>
+                            <constraint firstItem="TNj-kc-1fK" firstAttribute="leading" secondItem="7K4-10-8AO" secondAttribute="leading" id="FiF-vQ-Fuy"/>
+                            <constraint firstItem="TNj-kc-1fK" firstAttribute="top" secondItem="7K4-10-8AO" secondAttribute="bottom" constant="55" id="V3x-N4-EHY"/>
                             <constraint firstItem="7K4-10-8AO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gg2-2Y-brR"/>
                             <constraint firstItem="ZwQ-Df-RQf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="jLp-va-q0p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZwQ-Df-RQf" secondAttribute="trailing" constant="40" id="jtL-Ao-rBd"/>
+                            <constraint firstItem="TNj-kc-1fK" firstAttribute="trailing" secondItem="ZwQ-Df-RQf" secondAttribute="trailing" id="tJy-1i-eOb"/>
                         </constraints>
                     </view>
                     <connections>
