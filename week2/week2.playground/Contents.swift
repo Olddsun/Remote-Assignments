@@ -265,9 +265,9 @@ if let pet = ownPet2.pet {
 
 // Part3
 
-
 struct Person {
     var name: String
+    var toolMan: ToolMan
 
 }
 
@@ -291,11 +291,12 @@ extension Person: ToolMan {
 }
 
 struct Engineer: ToolMan{
-    func fixComputer() -> Void {
+    func fixComputer() {
     }
 }
 
-var steven = Person(name: "Steven" )
+var steven = Person(name: "Steven", toolMan: Engineer())
+
 
 
 
