@@ -183,8 +183,6 @@ Family.sayHi()
 
 
 
-
-
 //Part2
 
 // 1.
@@ -268,6 +266,11 @@ if let pet = ownPet2.pet {
 struct Person {
     var name: String
     var toolMan: ToolMan
+    
+    init(name: String, toolMan: ToolMan){
+        self.name = name
+        self.toolMan = toolMan
+    }
 
 }
 
