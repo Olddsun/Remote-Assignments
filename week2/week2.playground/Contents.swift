@@ -129,6 +129,13 @@ print(guyyy1.name)
 print(guyyy2.name)
 
 
+let isOdd: (Int) -> Bool = { number in
+    return number % 2 != 0
+}
+
+let number = 5
+let answer1 = isOdd(number)
+
 // 5.
 //用來設定初始value，因為class跟struct都是用來定義一個“類型”，他一開始不一定會被賦予固定的值，所以init()的作用就是用來先定義它最初始的值，這樣取用它的時候才能夠先得到一個值，不然會找不到值
 // Class initializer有不同的類型:

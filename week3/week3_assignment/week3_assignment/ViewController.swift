@@ -41,6 +41,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         checkTextField.delegate = self
         
+        //這個條件要放在viewdidload因為他是一進程式就要呈現的樣子，一開始沒有放在這，就要先來回按幾次才出現要的隱藏效果
+        segmentControl.layer.borderWidth = 1
+        segmentControl.layer.borderColor = UIColor(ciColor: .black).cgColor
+        
+        
         if segmentControl.selectedSegmentIndex == 0 {
             checkLabel.textColor = .gray
             checkTextField.backgroundColor = .gray
@@ -82,7 +87,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             accountTextField.text = ""
             passwordTextField.text = ""
             checkTextField.text = ""
-            accountTextField.allowsEditingTextAttributes = true
+            
 
         } else if segmentControl.selectedSegmentIndex == 1 {
             checkLabel.textColor = .black
@@ -98,6 +103,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         @IBAction func showAlert( ){
             
+            //為什麼這邊一定要guard let?
             guard let accountText = accountTextField.text,
                   let passwordText =  passwordTextField.text,
                   let checkText = checkTextField.text
@@ -107,22 +113,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if segmentControl.selectedSegmentIndex == 0 {
                 
                 if (accountText == "appworks_school" && passwordText == "1234") {
-                    let alert = UIAlertController(title: "Success!", message: "Log in", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    
-                    alert.addAction(action)
-                    
-                    present(alert, animated: true, completion: nil)
+                    alertFitAll(title: "Success", message: "Log in", tabname: "OK")
+//                    let alert = UIAlertController(title: "Success!", message: "Log in", preferredStyle: .alert)
+//
+//                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                    alert.addAction(action)
+//
+//                    present(alert, animated: true, completion: nil)
                     
                 } else {
-                    let alert = UIAlertController(title: "Error", message: "Login fail", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    
-                    alert.addAction(action)
-                    
-                    present(alert, animated: true, completion: nil)
+                    alertFitAll(title: "Error", message: "Login fail", tabname: "OK")
+//                    let alert = UIAlertController(title: "Error", message: "Login fail", preferredStyle: .alert)
+//
+//                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                    alert.addAction(action)
+//
+//                    present(alert, animated: true, completion: nil)
                 }
             }
             
@@ -130,66 +138,70 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if segmentControl.selectedSegmentIndex == 1 {
                 if (accountText != "" && passwordText != "" ){
                     if checkText == passwordText {
-                        let alert = UIAlertController(title: "Success!", message: "Sign up", preferredStyle: .alert)
-                        
-                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        
-                        alert.addAction(action)
-                        
-                        present(alert, animated: true, completion: nil)
+                        alertFitAll(title: "Success!", message: "Sign up", tabname: "OK")
+//                        let alert = UIAlertController(title: "Success!", message: "Sign up", preferredStyle: .alert)
+//
+//                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                        alert.addAction(action)
+//
+//                        present(alert, animated: true, completion: nil)
                     } else if checkText == "" {
-                        let alert = UIAlertController(title: "Error", message: "Check password should not be empty.", preferredStyle: .alert)
-                        
-                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        
-                        alert.addAction(action)
-                        
-                        present(alert, animated: true, completion: nil)
+                        alertFitAll(title: "Error", message: "Check password should not be empty.", tabname: "OK")
+//                        let alert = UIAlertController(title: "Error", message: "Check password should not be empty.", preferredStyle: .alert)
+//
+//                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                        alert.addAction(action)
+//
+//                        present(alert, animated: true, completion: nil)
                     } else if checkText != passwordText {
-                        let alert = UIAlertController(title: "Error", message: "checkPassword should be same as Password.", preferredStyle: .alert)
-                        
-                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        
-                        alert.addAction(action)
-                        
-                        present(alert, animated: true, completion: nil)
+                        alertFitAll(title: "Error", message: "Signup fail\n(Check Password should be same as Password.)", tabname: "OK")
+//                        let alert = UIAlertController(title: "Error", message: "checkPassword should be same as Password.", preferredStyle: .alert)
+//
+//                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                        alert.addAction(action)
+//
+//                        present(alert, animated: true, completion: nil)
                     }
                 
                 }
             }
             
-            
-            
             if accountText == "" {
-                let alert = UIAlertController(title: "Error", message: "Account should not be empty.", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                
-                alert.addAction(action)
-                
-                present(alert, animated: true, completion: nil)
+                alertFitAll(title: "Error", message: "Account should not be empty.", tabname: "OK")
+//                let alert = UIAlertController(title: "Error", message: "Account should not be empty.", preferredStyle: .alert)
+//
+//                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                alert.addAction(action)
+//
+//                present(alert, animated: true, completion: nil)
                 
             } else if
                 
                 passwordText == "" {
-                let alert = UIAlertController(title: "Error", message: "Password should not be empty.", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                
-                alert.addAction(action)
-                
-                present(alert, animated: true, completion: nil)
-                
+                alertFitAll(title: "Error", message: "Password should not be empty.", tabname: "OK")
+//                let alert = UIAlertController(title: "Error", message: "Password should not be empty.", preferredStyle: .alert)
+//
+//                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                alert.addAction(action)
+//
+//                present(alert, animated: true, completion: nil)
+//
             } else if
                 
                 checkText == "" {
-                let alert = UIAlertController(title: "Error", message: "Check Password should not be empty.", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                
-                alert.addAction(action)
-                
-                present(alert, animated: true, completion: nil)
+                alertFitAll(title: "Error", message: "Check Password should not be empty.", tabname: "OK")
+//                let alert = UIAlertController(title: "Error", message: "Check Password should not be empty.", preferredStyle: .alert)
+//
+//                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                alert.addAction(action)
+//
+//                present(alert, animated: true, completion: nil)
                 
             }
             
@@ -208,11 +220,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
     
-    func alertClean(a: String, b: String, c: String) {
+    func alertFitAll(title: String, message: String, tabname: String) {
         
-        let alert = UIAlertController(title: a, message: b, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        let action = UIAlertAction(title: c, style: .default, handler: nil)
+        let action = UIAlertAction(title: tabname, style: .default, handler: nil)
 
         alert.addAction(action)
 
