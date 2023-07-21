@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     //制定屬性codable的struct，當作要decode成的type的範本
     struct StationData: Codable {
         let stationID: String
@@ -16,32 +15,27 @@ class ViewController: UIViewController {
         let stationAddress: String
     }
     
-    
     @IBOutlet weak var StationIDLabel: UILabel!
     @IBOutlet weak var StationNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         fetchdataFromAPI()
-        
-        
     }
-    
-    
-    
+
     func fetchdataFromAPI() {
-        
+    // 要get的url
         let url = URL(string: "https://remote-assignment.s3.ap-northeast-1.amazonaws.com/station")!
-        
+    // 新增session，帶入三個參數data, response, error
         let session = URLSession.shared.dataTask(with: url) {
             (data, response, error) in
-            
+    // 當data正確時，把data從JSON形式decode成string
             if let data = data {
                 let decoder = JSONDecoder()
-                //JSONdecoder的decode的method
+    // decode(a,b)的a參數是要decode成的type，b是要decode的目標
                 if let stationData = try? decoder.decode(StationData.self, from: data) {
+    // 要在main thread上執行，UI才會顯示
                     DispatchQueue.main.async {
                         self.StationIDLabel.text = "\(stationData.stationID)"
                         self.StationNameLabel.text = "\(stationData.stationName)"
@@ -52,7 +46,7 @@ class ViewController: UIViewController {
                     print("wrong data")
                 }
             }
-        // 一開始把error = error寫在data前面，結果一直不成功，後來發現是沒error的話他就會直接return了
+        // 一開始把error block寫在data前面，結果一直不成功，後來發現是沒error的話他就會直接return了
             if let error = error {
                 print("There is an error: \(error.localizedDescription)")
             } else {
